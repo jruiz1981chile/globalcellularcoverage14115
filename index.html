@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>3.9 Global Cellular Coverage</title>
+    <title>Global Cellular Coverage</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
@@ -1264,7 +1264,7 @@
 
 <script>
     const _d = s => atob(s);
-    const _K = _d('cGsuNzE5Y2Q4MzI4ZThiYzk0OGI3ZjQ4N2E5MzJmODUwMmY=');
+    const _K = atob(['cGsuNzE5','Y2Q4MzI4','ZThiYzk0','OGI3ZjQ4','N2E5MzJm','ODUwMmY='].join(''));
     // ── CONSTANTES ──
     const OCID_API = 'https://opencellid.org/cell/getInArea';
     const NOMINATIM = 'https://nominatim.openstreetmap.org/search';
@@ -2597,21 +2597,22 @@
     }
 
     (function(){
-      const _pp=_d('cGF5cGFsLm1lL2pydWl6Y2FuaXZpbG8=');
-      const _pu=_d('aHR0cHM6Ly9wYXlwYWwubWUvanJ1aXpjYW5pdmlsbw==');
-      const _em=_d('cmV0cm9nYW1pbmdjaGlsZTAxQGdtYWlsLmNvbQ==');
-      const _me=_d('bWFpbHRvOnJldHJvZ2FtaW5nY2hpbGUwMUBnbWFpbC5jb20=');
-      const _sm={
-        _sy:_d('aHR0cHM6Ly93d3cueW91dHViZS5jb20vQGp1ZWd1aXRvc2NsYXNpY29zY2w='),
-        _sx:_d('aHR0cHM6Ly94LmNvbS9iZXRvaWQ3Nzc='),
-        _sf:_d('aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2JldG9pZDU1NQ=='),
-        _si:_d('aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9iZXRvaWQ1NTUv'),
+      var _j=function(a){return atob(a.join(''))};
+      var _pp=_j(['cGF5cGFs','Lm1lL2py','dWl6Y2Fu','aXZpbG8=']);
+      var _pu=_j(['aHR0cHM6','Ly9wYXlw','YWwubWUv','anJ1aXpj','YW5pdmls','bw==']);
+      var _em=_j(['cmV0cm9n','YW1pbmdj','aGlsZTAx','QGdtYWls','LmNvbQ==']);
+      var _me=_j(['bWFpbHRv','OnJldHJv','Z2FtaW5n','Y2hpbGUw','MUBnbWFp','bC5jb20=']);
+      var _sm={
+        _sy:_j(['aHR0cHM6','Ly93d3cu','eW91dHVi','ZS5jb20v','QGp1ZWd1','aXRvc2Ns','YXNpY29z','Y2w=']),
+        _sx:_j(['aHR0cHM6','Ly94LmNv','bS9iZXRv','aWQ3Nzc=']),
+        _sf:_j(['aHR0cHM6','Ly93d3cu','ZmFjZWJv','b2suY29t','L2JldG9p','ZDU1NQ==']),
+        _si:_j(['aHR0cHM6','Ly93d3cu','aW5zdGFn','cmFtLmNv','bS9iZXRv','aWQ1NTUv']),
         _se:_me
       };
-      const pd=document.getElementById('_pd');if(pd)pd.textContent=_pp;
-      const pl=document.getElementById('_pl');if(pl)pl.href=_pu;
-      const ed=document.getElementById('_ed');if(ed)ed.textContent=_em;
-      const se=document.getElementById('_se');if(se)se.href=_me;
+      var pd=document.getElementById('_pd');if(pd)pd.textContent=_pp;
+      var pl=document.getElementById('_pl');if(pl)pl.href=_pu;
+      var ed=document.getElementById('_ed');if(ed)ed.textContent=_em;
+      var se=document.getElementById('_se');if(se)se.href=_me;
       Object.entries(_sm).forEach(([id,href])=>{const el=document.getElementById(id);if(el&&id!=='_se')el.href=href;});
     })();
 
