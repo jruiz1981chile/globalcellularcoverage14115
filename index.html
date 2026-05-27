@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>v3.9 - Global Cellular Coverage - </title>
+    <title>3.9 Global Cellular Coverage</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
@@ -1205,20 +1205,20 @@
                 <div class="donate-card">
                     <div class="donate-title">PAYPAL</div>
                     <div class="donate-desc">Direct donation through PayPal.</div>
-                    <div class="donate-data">paypal.me/jruizcanivilo</div>
-                    <a class="donate-link" href="https://paypal.me/jruizcanivilo" target="_blank" rel="noopener">OPEN PAYPAL</a>
+                    <div class="donate-data" id="_pd"></div>
+                    <a class="donate-link" id="_pl" href="#" target="_blank" rel="noopener">OPEN PAYPAL</a>
                 </div>
             </div>
             <div class="donate-card">
                 <div class="donate-title">SOCIAL AND CONTACT</div>
                 <div class="social-grid">
-                    <a class="social-link" href="https://www.youtube.com/@jueguitosclasicoscl" target="_blank" rel="noopener">YOUTUBE</a>
-                    <a class="social-link" href="https://x.com/betoid777" target="_blank" rel="noopener">X / TWITTER</a>
-                    <a class="social-link" href="https://www.facebook.com/betoid555" target="_blank" rel="noopener">FACEBOOK</a>
-                    <a class="social-link" href="https://www.instagram.com/betoid555/" target="_blank" rel="noopener">INSTAGRAM</a>
-                    <a class="social-link" href="mailto:retrogamingchile01@gmail.com">EMAIL</a>
+                    <a class="social-link" id="_sy" href="#" target="_blank" rel="noopener">YOUTUBE</a>
+                    <a class="social-link" id="_sx" href="#" target="_blank" rel="noopener">X / TWITTER</a>
+                    <a class="social-link" id="_sf" href="#" target="_blank" rel="noopener">FACEBOOK</a>
+                    <a class="social-link" id="_si" href="#" target="_blank" rel="noopener">INSTAGRAM</a>
+                    <a class="social-link" id="_se" href="#">EMAIL</a>
                 </div>
-                <div class="donate-data">retrogamingchile01@gmail.com</div>
+                <div class="donate-data" id="_ed"></div>
             </div>
         </div>
     </div>
@@ -1263,6 +1263,8 @@
 </div>
 
 <script>
+    const _d = s => atob(s);
+    const _K = _d('cGsuNzE5Y2Q4MzI4ZThiYzk0OGI3ZjQ4N2E5MzJmODUwMmY=');
     // ── CONSTANTES ──
     const OCID_API = 'https://opencellid.org/cell/getInArea';
     const NOMINATIM = 'https://nominatim.openstreetmap.org/search';
@@ -1834,7 +1836,7 @@
       for(let i=0; i<tiles.length; i++){
         const bbox = bboxToParam(tiles[i]);
         const basePct = 58 + Math.round((i/Math.max(1,tiles.length))*12);
-        const allRadiosUrl = `https://opencellid.org/cell/getInArea?key=pk.719cd8328e8bc948b7f487a932f8502f&BBOX=${bbox}&mcc=${CURRENT_COUNTRY.mcc}&format=json&limit=1000`;
+        const allRadiosUrl = `https://opencellid.org/cell/getInArea?key=${_K}&BBOX=${bbox}&mcc=${CURRENT_COUNTRY.mcc}&format=json&limit=1000`;
         try{
           const chunk = await fetchOpenCellIdUrl(allRadiosUrl, `tile ${i+1}/${tiles.length} all`, basePct);
           cells.push(...chunk.map(c => ({
@@ -1849,7 +1851,7 @@
 
         for(let r=0; r<OCID_RADIOS.length; r++){
           const radio = OCID_RADIOS[r];
-          const apiUrl = `https://opencellid.org/cell/getInArea?key=pk.719cd8328e8bc948b7f487a932f8502f&BBOX=${bbox}&mcc=${CURRENT_COUNTRY.mcc}&radio=${radio}&format=json&limit=200`;
+          const apiUrl = `https://opencellid.org/cell/getInArea?key=${_K}&BBOX=${bbox}&mcc=${CURRENT_COUNTRY.mcc}&radio=${radio}&format=json&limit=200`;
           try{
             const done = (i*OCID_RADIOS.length)+r;
             const total = tiles.length*OCID_RADIOS.length;
@@ -1881,7 +1883,7 @@
     async function fetchTowersLegacy(lat,lon,radiusM){
       const bounds = buildBbox(lat,lon,radiusM);
       const bbox = bboxToParam(bounds);
-      const apiUrl = `https://opencellid.org/cell/getInArea?key=pk.719cd8328e8bc948b7f487a932f8502f&BBOX=${bbox}&mcc=${CURRENT_COUNTRY.mcc}&format=json&limit=200`;
+      const apiUrl = `https://opencellid.org/cell/getInArea?key=${_K}&BBOX=${bbox}&mcc=${CURRENT_COUNTRY.mcc}&format=json&limit=200`;
       const proxies = [
         u => `https://corsproxy.io/?${encodeURIComponent(u)}`,
         u => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}`,
@@ -2593,6 +2595,25 @@
         anchor.insertAdjacentElement('afterend', card);
       }
     }
+
+    (function(){
+      const _pp=_d('cGF5cGFsLm1lL2pydWl6Y2FuaXZpbG8=');
+      const _pu=_d('aHR0cHM6Ly9wYXlwYWwubWUvanJ1aXpjYW5pdmlsbw==');
+      const _em=_d('cmV0cm9nYW1pbmdjaGlsZTAxQGdtYWlsLmNvbQ==');
+      const _me=_d('bWFpbHRvOnJldHJvZ2FtaW5nY2hpbGUwMUBnbWFpbC5jb20=');
+      const _sm={
+        _sy:_d('aHR0cHM6Ly93d3cueW91dHViZS5jb20vQGp1ZWd1aXRvc2NsYXNpY29zY2w='),
+        _sx:_d('aHR0cHM6Ly94LmNvbS9iZXRvaWQ3Nzc='),
+        _sf:_d('aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2JldG9pZDU1NQ=='),
+        _si:_d('aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9iZXRvaWQ1NTUv'),
+        _se:_me
+      };
+      const pd=document.getElementById('_pd');if(pd)pd.textContent=_pp;
+      const pl=document.getElementById('_pl');if(pl)pl.href=_pu;
+      const ed=document.getElementById('_ed');if(ed)ed.textContent=_em;
+      const se=document.getElementById('_se');if(se)se.href=_me;
+      Object.entries(_sm).forEach(([id,href])=>{const el=document.getElementById(id);if(el&&id!=='_se')el.href=href;});
+    })();
 
     window.addEventListener('load',()=>{
       relocateNearestTowersCard();
